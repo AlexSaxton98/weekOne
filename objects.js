@@ -144,36 +144,82 @@
 
 //Activity 3
 
-i = 0
+//Attempt 1, using nested arrays to list the food and drinks. This failed as when it came time to call them in the Order functions, I couldn't find a way
+//to call the second item in the arrays that had already been called by the perameters of Order methods
+
+// i = 0
+
+// coffeeShop = {
+//     branch: "Blacksheep",
+//     drinks:[
+//         ["Coffee", 2],
+//         ["Latte", 2.50],
+//         ["Cappucino", 2.50],
+//         ["Tea", 1.75]
+//     ],
+//     food:[
+//         ["Sandwich", 4],
+//         ["Panini", 4.75],
+//         ["Cookie", 1.25]
+//     ],
+
+//     drinksOrdered(dOrders){
+//         console.log(dOrders)
+//     },
+//     foodOrdered(fOrders){
+//         console.log(fOrders)
+//     },
+//     totalOrder(){
+//         this.drinksOrdered(this.drinks[1][i], this.drinks[2][i])
+//             let drinkCost = 
+//         this.foodOrdered(`Your order is ${this.food[1][0]}, ${this.drinks[2][0]}`)
+//         console.log
+//     }
+
+
+// }
+
+// coffeeShop.totalOrder()
+
+
+//Attempt 2
+
+drinksArray = []
+drinksCostArray = []
+foodArray = []
+foodCostArray = []
 
 coffeeShop = {
     branch: "Blacksheep",
-    drinks:[
-        ["Coffee", 2],
-        ["Latte", 2.50],
-        ["Cappucino", 2.50],
-        ["Tea", 1.75]
-    ],
-    food:[
-        ["Sandwich", 4],
-        ["Panini", 4.75]
-        ["Cookie", 1.25]
-    ],
+    drink1: ["Coffee", 2],
+    drink2: ["Latte", 2.50],
+    drink3: ["Cappucino", 2.50],
+    drink4: ["Tea", 1.75],
+    food1:  ["Sandwich", 4],
+    food2:  ["Panini", 4.75],
+    food3:  ["Cookie", 1.25],
+    blank:"",
+    drinksOrdered(drinksOrder1, drinksOrder2, drinksOrder3, drinksOrder4){
 
-    drinksOrdered(dOrders){
-        console.log(dOrders)
+        if(drinksOrder4 == "" && drinksOrder3 =="" && drinksOrder2 == ""){
+            console.log(`Thank you for your order, that will be a ${drinksOrder1}`)
+        }   else if(drinksOrder4 == "" && drinksOrder3 == ""){
+            console.log(`Thank you for your order, that will be a ${drinksOrder1} and a ${drinksOrder2}`)
+        }   else if(drinksOrder4 == ""){
+            console.log(`Thank you for your order, that will be a ${drinksOrder1}, a ${drinksOrder2} and a ${drinksOrder3}`)
+        }   else{
+            console.log(`Thank you for your order, that will be a ${drinksOrder1}, a ${drinksOrder2}, a ${drinksOrder3} and a ${drinksOrder4}`)
+        }
+        
+        
     },
-    foodOrdered(fOrders){
-        console.log(fOrders)
-    },
-    totalOrder(){
-        this.drinksOrdered(this.drinks[1][i], this.drinks[2][i])
-            let drinkCost = 
-        this.foodOrdered(`Your order is ${this.food[1][0]}, ${this.drinks[2][0]}`)
-        console.log
+
+    foodOrdered(){
+
     }
-
 
 }
 
-coffeeShop.totalOrder()
+coffeeShop.drinksOrdered(coffeeShop.drink1[0], coffeeShop.drink1[0], coffeeShop.blank, coffeeShop.blank)
+
+
